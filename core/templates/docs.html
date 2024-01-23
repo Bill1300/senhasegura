@@ -5,9 +5,8 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/styles.css?{%  now 'U' %}">
     <link rel="stylesheet" href="/static/css/styles-docs.css?{%  now 'U' %}">
-    <link rel="icon" type="image/x-icon" href="/static/images/icons-senhasegura/ico-ss-escuro.png">
+    <link rel="icon" type="image/x-icon" href="/static/images/icons-senhasegura/ico-ss-escuro.png?{%  now 'U' %}">
     <title>SenhaSegura - Documentação</title>
 </head>
 
@@ -17,7 +16,7 @@
         <a href="{% url 'docs' %}" target="_blank">Documentação</a>
     </div>
     <div class="container">
-        <div class="titulo-ss"><img src="/static/images/icons-senhasegura/ico-ss-claro.png" draggable="false"
+        <div class="titulo-ss"><img src="/static/images/icons-senhasegura/ico-ss-claro.png?{%  now 'U' %}" draggable="false"
                 width="60px" height="auto">
             <h1 class="naoSelecionavel">SenhaSegura</h1>
         </div>
@@ -54,7 +53,7 @@
             </ul>
             <ul class="responsive-table">
                 <li class="table-row">
-                    <img draggable="false" alt="Imagem de formulário para adicionar senhas." src="/static/images/imgs-docs/img-docs1.png">
+                    <img draggable="false" alt="Imagem de formulário para adicionar senhas." src="/static/images/imgs-docs/img-docs1.png?{%  now 'U' %}">
                 </li>
             </ul>
             <h4>Mostrar/Ocultar</h4>
@@ -75,7 +74,7 @@
             </p>
             <ul class="responsive-table">
                 <li class="table-row">
-                    <img draggable="false" alt="Imagem de um item de senha com informações." src="/static/images/imgs-docs/img-docs2.png">
+                    <img draggable="false" alt="Imagem de um item de senha com informações." src="/static/images/imgs-docs/img-docs2.png?{%  now 'U' %}">
                 </li>
             </ul>
             <h3 class="subtitulo-docs">Parâmentros</h3>
@@ -168,7 +167,7 @@
             <span class="saida-docs naoSelecionavel">O arquivo exportado para [endereço] NÃO está criptografado.</span>
 
             <h3 class="subtitulo-docs">Estrutura de arquivos</h3>
-            <a href="/core/structure/"><img src="/static/images/structure.png" class="naoSelecionavel" draggable="false"
+            <a href="/core/structure/"><img src="/static/images/imgs-docs/structure.png?{%  now 'U' %}" class="naoSelecionavel" draggable="false"
                     width="800" title="Estrutura de arquivos"></a>
 
             <h3 class="subtitulo-docs"><i>Feedback</i></h3>
@@ -178,5 +177,4 @@
     </div>
 </body>
 <script src="{% static '/js/script.js' %}"></script>
-
 </html>

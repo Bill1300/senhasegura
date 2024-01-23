@@ -72,7 +72,8 @@ body {
 }
 
 /* Headings */
-h1, h3 {
+h1,
+h3 {
     font-family: 'RussoOne';
     text-align: center;
 }
@@ -84,22 +85,6 @@ h1 {
 h3 {
     font-size: 22px;
     color: #333;
-}
-
-/* Title Subsection Styles */
-.titulo-ss {
-    display: flex;
-    align-items: center;
-}
-
-.titulo-ss img {
-    margin-right: 10px;
-}
-
-/* Form and Input Styles */
-.password-form,
-.password-list {
-    margin-bottom: 20px;
 }
 
 label {
@@ -131,6 +116,22 @@ button {
     border-radius: 4px;
     cursor: pointer;
     transition: 0.3s;
+}
+
+/* Title Subsection Styles */
+.titulo-ss {
+    display: flex;
+    align-items: center;
+}
+
+.titulo-ss img {
+    margin-right: 10px;
+}
+
+/* Form and Input Styles */
+.password-form,
+.password-list {
+    margin-bottom: 20px;
 }
 
 .asterisco-obg {
@@ -269,6 +270,13 @@ button {
     display: none;
 }
 
+.senha-oculto {
+    padding: 0 10px;
+    background-color: #7fabd8;
+    color: #0056b3;
+    border-radius: 150px;
+}
+
 /* Confirmation Dialog Styles */
 .deletar-confirmar {
     position: fixed;
@@ -291,33 +299,12 @@ button {
     border: solid 2px #b30000;
 }
 
-/* Documentation Styles */
-.subtitulo-docs {
-    text-align: left;
-}
-
-.texto-docs {
-    font-family: Roboto-Regular, sans-serif;
-    font-size: large;
-    text-align: justify;
-    text-indent: 1em;
-}
-
-.texto-lista-docs {
-    font-family: Roboto-Regular;
-}
-
-.saida-docs {
-    padding: 5px 10px;
-    background-color: #7fabd8;
-    color: #0056b3;
-    border-radius: 150px;
+.responsive-table {
+    margin: 0;
 }
 
 /* Responsive Table Styles */
 .responsive-table {
-    margin: 0;
-
     li {
         border-radius: 3px;
         padding: 20px 25px;
@@ -325,22 +312,22 @@ button {
         justify-content: space-between;
         margin-bottom: 20px;
         margin-left: -5%;
+    }
 
-        .table-row {
-            background-color: #ffffff;
-            box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
-        }
+    .table-row {
+        background-color: #ffffff;
+        box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+    }
 
-        .col-1 {
-            flex-basis: 50%;
-            text-align: justify;
-        }
+    .col-1 {
+        flex-basis: 50%;
+        text-align: justify;
+    }
 
-        .col-2 {
-            flex-basis: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    .col-2 {
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
