@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css?{%  now 'U' %}">
+    <link rel="icon" type="image/x-icon" href="/static/images/icons-senhasegura/ico-ss-escuro.png?{%  now 'U' %}">
+    <title>SenhaSegura</title>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" onclick="window.location.reload();">Minhas Senhas</a>
+        <a href="{% url 'docs' %}">Documentação</a>
+    </div>
+    <dialog id="modal-deletar-confirmar" class="deletar-confirmar">
+        <h3>Confirmar</h3>
+        <p>Você realmente deseja deletar <strong id="modal-nome-senha"></strong> ?</p>
+        <div class="password-actions botoes-dialog">
+            <a id="botao-deletar-confirmar" class="item-confirmar" href="">Confirmar</a>
+            <a id="botao-deletar-cancelar">Cancelar</a>
+        </div>
+    </dialog>
+    <div class="container">
+        <div class="titulo-ss"><img src="/static/images/icons-senhasegura/ico-ss-claro.png" draggable="false"
+                width="60px" height="auto">
+            <h1 class="naoSelecionavel">SenhaSegura</h1>
+        </div>
+        <section class="password-form">
+            <form action="{% url 'save' %}" method="post">
+                {% csrf_token %}
+                <label for="titulo">Título<span class="asterisco-obg">*</span></label>
+                <input type="text" name="titulo" id="titulo" required>
+
+                <label for="descricao">Descrição</label>
+                <input type="text" name="descricao" id="descricao">
+
+                <label for="usuario">Usuário</label>
+                <input type="text" name="usuario" id="usuario">
+
+                <label for="senha">Senha<span class="asterisco-obg">*</span></label>
+                <input type="password" name="senha" id="senha" required>
+                <div>
+                    <button class="acaoSubmit" type="submit">Adicionar</button>
+                    <button class="acaoGerar" type="button" id="gerarSenhaBotao">Gerar Senha</button>
+                </div>
+            </form>
+        </section>
+    </div>
+    <div id="blocoSenhas" class="container">
+        <input type="text" id="search-input-id" class="search-input" placeholder="Pesquisar por título">
+        <section class="password-list">
+            <ul id="listaSenhas">
+                {% for s in senhas|dictsort:'titulo' %}
+                <li class="password-item">
+                    <h3>{{ s.titulo }}</h3>
+                    <div class="details-block">
+                        <p class="password-details">
+                            <img src="/static/images/imgs-senhasegura/descricao.png" width="30px" height="auto"
+                                title="Descrição">
+                            <span>{{ s.descricao }} </span>
+                        </p>
+                        <p class="password-details">
+                            <img src="/static/images/imgs-senhasegura/usuario.png" width="30px" height="auto"
+                                title="Usuário">
+                            <span class="senha-mostrar" id="idUsuario{{ s.id }}">{{ s.usuario }}</span>
+                            <span class="naoSelecionavel senha-oculto senha-oculto{{s.id}}">Oculto</span>
+                        </p>
+                        <p class="password-details">
+                            <img src="/static/images/imgs-senhasegura/senha.png" width="30px" height="auto" title="Senha">
+                            <span class="senha-mostrar" id="idSenha{{ s.id }}">{{ s.senha }} </span>
+                            <span class="naoSelecionavel senha-oculto senha-oculto{{s.id}}">Oculto</span>
+                        </p>
+                    </div>
+                    <div class="password-actions">
+                        <a id="id-copy-link" class="copy-link" data-id="{{ s.id }}">Copiar</a>
+                        <a id="id-show-link" class="show-link" data-id="{{ s.id }}">Mostrar</a>
+                        <a href="{% if s.id %}{% url 'edit' s.id %}{% endif %}" class="edit-link">Editar</a>
+                        <a id="id-delete-link" onclick="setIdToModal('{{ s.id }}')" class="delete-link">Deletar</a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+</body>
+<script src="/static/js/script.js?{%  now 'U' %}"></script>
+</html>

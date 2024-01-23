@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css?{%  now 'U' %}">
+    <link rel="stylesheet" href="/static/css/styles-docs.css?{%  now 'U' %}">
+    <link rel="icon" type="image/x-icon" href="/static/images/icons-senhasegura/ico-ss-escuro.png">
+    <title>SenhaSegura - Documentação</title>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" onclick="toHomePage();">Minhas Senhas</a>
+        <a href="{% url 'docs' %}" target="_blank">Documentação</a>
+    </div>
+    <div class="container">
+        <div class="titulo-ss"><img src="/static/images/icons-senhasegura/ico-ss-claro.png" draggable="false"
+                width="60px" height="auto">
+            <h1 class="naoSelecionavel">SenhaSegura</h1>
+        </div>
+        <section>
+            <p class="texto-docs">A SenhaSegura é uma ferramenta <i>open-source</i> de cofre de senhas pessoais
+                projetada para proporcionar máxima segurança e simplicidade na gestão de suas credenciais digitais.
+                Desenvolvida com ênfase na privacidade e no controle do usuário, essa aplicação utiliza criptografia
+                avançada para garantir a proteção robusta de suas senhas sensíveis.</p>
+            <p class="texto-docs">Ao optar pela SenhaSegura, você escolhe uma solução de gerenciamento de senhas que
+                coloca a segurança em primeiro lugar.</p>
+            <h3 class="subtitulo-docs">Como usar a plataforma</h3>
+            <p class="texto-docs">Para inserir uma senha, insira as seguintes informações na seção de cadastro:</p>
+            <ul class="responsive-table-list">
+                <li class="table-row">
+                    <div class="col col-1">Título<br>
+                        <spam class="texto-lista-docs">Utilizado para filtrar com a barra de pesquisa entre todas as senhas armazenadas.</spam>
+                    </div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1">Descrição<br>
+                        <spam class="texto-lista-docs">Utilizado para fornecer informações adicionais abertas.</spam>
+                    </div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1">Usuário<br>
+                        <spam class="texto-lista-docs">Utilizado para registrar informações do usuário, se necessário.</spam>
+                    </div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1">Senha<br>
+                        <spam class="texto-lista-docs">Utilizado para armazenar a senha gerada ou não pela SenhaSegura.</spam>
+                    </div>
+                </li>
+            </ul>
+            <ul class="responsive-table">
+                <li class="table-row">
+                    <img draggable="false" alt="Imagem de formulário para adicionar senhas." src="/static/images/imgs-docs/img-docs1.png">
+                </li>
+            </ul>
+            <h4>Mostrar/Ocultar</h4>
+            <p class="texto-docs">
+                A senha armazenada possui o título como a informação principal, facilitando a pesquisa na lista de senhas armazenadas, além de contar com uma descrição. As informações de usuário e senha estão ocultas e podem ser reveladas usando o botão "Mostrar".
+            </p>
+            <h4>Copiar</h4>
+            <p class="texto-docs">
+                Para copiar a senha para a área de transferência, utilize o botão "Copiar", mesmo quando a senha está oculta.
+            </p>
+            <h4>Editar</h4>
+            <p class="texto-docs">
+                Para alterar nas informações da senha, utilize o botão "Editar", que abrirá um formulário com seções editáveis. Após realizar as edições desejadas, utilize o botão "Salvar".
+            </p>
+            <h4>Deletar</h4>
+            <p class="texto-docs">
+                Para excluir uma senha, utilize o botão "Deletar", e em seguida, confirme a remoção clicando em "Confirmar" (ou pressionando a tecla <kbd>ENTER</kbd>) ou cancele a operação clicando em "Cancelar" (ou pressionando a tecla <kbd>ESC</kbd>).
+            </p>
+            <ul class="responsive-table">
+                <li class="table-row">
+                    <img draggable="false" alt="Imagem de um item de senha com informações." src="/static/images/imgs-docs/img-docs2.png">
+                </li>
+            </ul>
+            <h3 class="subtitulo-docs">Parâmentros</h3>
+            <p class="texto-docs">Para utilizar os parâmetros, inclua-os após a chamada do comando SenhaSegura, como no
+                exemplo: <kbd>senhasegura --ajuda</kbd>.</p>
+            <ul class="responsive-table">
+                <li class="table-row">
+                    <div class="col col-1">Apresentar ajuda<br><span class="texto-lista-docs">Apresenta alguns
+                            parâmetros e funcionalidades, além do link para a documentação online da ferramenta.</div>
+                    <div class="col col-2"><span class="alinhar-lista-docs"><kbd>-a</kbd> ou <kbd>--ajuda</kbd></span>
+                    </div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1">Editar senha<br><span class="texto-lista-docs">Inicia a função de editar a
+                            senha de entrada da ferramenta. É necessária a senha atual.</div>
+                    <div class="col col-2"><span class="alinhar-lista-docs"><kbd>-e</kbd> ou <kbd>--editar</kbd></span>
+                    </div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1">Apresentar histórico<br><span class="texto-lista-docs">Apresenta um breve
+                            histórico das últimas vezes que a ferramenta foi utilizada.</div>
+                    <div class="col col-2"><span class="alinhar-lista-docs"><kbd>-h</kbd> ou
+                            <kbd>--historico</kbd></span></div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1">Mostrar senha<br><span class="texto-lista-docs">Com este parâmetro as senhas
+                            são visíveis ao inserir. Pode ser combinada com outros parâmetros de funções.</div>
+                    <div class="col col-2"><span class="alinhar-lista-docs"><kbd>-m</kbd> ou <kbd>--mostrar</kbd></span>
+                    </div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1">Definir pânico<br><span class="texto-lista-docs">Inicia a função de definir
+                            uma senha pânico. A senha pânico quando inserida deleta todo o banco de dados com as senhas
+                            salvas de modo permanente. É necessária a senha atual.</div>
+                    <div class="col col-2"><span class="alinhar-lista-docs"><kbd>-p</kbd> ou <kbd>--panico</kbd></span>
+                    </div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1">Exportar senhas<br><span class="texto-lista-docs">Inicia a função de
+                            exportação de banco de dados com as senhas salvas, mas este arquivo não é criptografado. É
+                            necessário a senha atual.</div>
+                    <div class="col col-2"><span class="alinhar-lista-docs"><kbd>-x</kbd> ou
+                            <kbd>--exportar</kbd></span></div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1">Apresentar versão<br><span class="texto-lista-docs">Apresenta a versão
+                            instalada.</div>
+                    <div class="col col-2"><span class="alinhar-lista-docs"><kbd>-v</kbd> ou
+                            <kbd>--versao</kbd></span></div>
+                </li>
+            </ul>
+
+            <h3 class="subtitulo-docs">Editar senha</h3>
+            <p class="texto-docs">O processo de edição da senha de entrada no sistema SenhaSegura é conduzido mediante a
+                utilização dos parâmetros <kbd>-e</kbd> ou <kbd>--editar</kbd>. Após autenticar-se, é necessário inserir
+                uma senha composta por 12 caracteres, abrangendo números, caracteres especiais, além de letras
+                maiúsculas e minúsculas.</p>
+            <p class="texto-docs">Toda essa informação é armazenada de maneira segura e criptografada no arquivo gerado
+                denominado 'profile.json'. Este procedimento de armazenamento criptografado é fundamental para
+                resguardar a integridade e confidencialidade. Após executar é apresentado:</p>
+            <span class="saida-docs naoSelecionavel">Senha alterada.</span>
+
+            <h3 class="subtitulo-docs">Apresentar histórico</h3>
+            <p class="texto-docs">Para apresentar o histórico é essencial utilizar o parâmetro <kbd>-h</kbd> ou
+                <kbd>--historico</kbd>. É apresentado uma lista com as seguintes informações:</p>
+            <span class="saida-docs naoSelecionavel"> Data | Hora | Acesso </span>
+            <p class="texto-docs">A data e a hora serão registradas conforme o horário da internet, caso haja uma
+                conexão disponível. No entanto, na ausência de conexão, as informações locais do computador serão
+                empregadas. No que diz respeito ao registro de acesso, se a autenticação for bem-sucedida, será
+                registrado como "Permitido". Em contrapartida, se a autenticação for recusada devido a erros na inserção
+                da senha, será registrado como "Recusado (erro ao inserir senha)".</p>
+
+            <h3 class="subtitulo-docs">Definir 'Pânico'</h3>
+            <p class="texto-docs">O modo 'pânico' tem o objetivo de eliminar de maneira permanente todas as senhas
+                armazenadas no arquivo db.sqlite3. Para configurar essa função, é necessário empregar o parâmetro
+                <kbd>-p</kbd> ou <kbd>--panico</kbd> e entrar com a senha de acesso da SenhaSegura. Após autenticar-se,
+                é necessário inserir uma senha composta por 12 caracteres, abrangendo números, caracteres especiais,
+                além de letras maiúsculas e minúsculas. Uma vez estabelecida a senha, não é possível alterar esta senha.
+            </p>
+            <p class="texto-docs">Dessa maneira, ao inserir a senha 'pânico' ao invés senha correta, ocorre uma
+                reinicialização do banco de dados, com todos as informações deletadas. Após executar é apresentado:</p>
+            <span class="saida-docs naoSelecionavel">Todas as senhas foram apagadas.</span>
+
+            <h3 class="subtitulo-docs">Exportar senhas</h3>
+            <p class="texto-docs">Para realizar a exportação das senhas, é essencial utilizar o parâmetro <kbd>-x</kbd>
+                ou <kbd>--exportar</kbd>, seguido da inserção da senha de acesso a SenhaSegura. Após a autenticação
+                correta, é fundamental indicar o diretório de destino onde o arquivo será salvo. Ressalta-se que este
+                arquivo não possui criptografia, portanto, é imprescindível exercer cuidado ao determinar o local de
+                compartilhamento. Após executar é apresentado:</p>
+            <span class="saida-docs naoSelecionavel">O arquivo exportado para [endereço] NÃO está criptografado.</span>
+
+            <h3 class="subtitulo-docs">Estrutura de arquivos</h3>
+            <a href="/core/structure/"><img src="/static/images/structure.png" class="naoSelecionavel" draggable="false"
+                    width="800" title="Estrutura de arquivos"></a>
+
+            <h3 class="subtitulo-docs"><i>Feedback</i></h3>
+            <p class="texto-docs">Você teve algum problema ao executar? Alguma ideia de funcionalidade nova?</p>
+            <p class="texto-docs"><a class="feedback" target="_blank" href="https://forms.gle/r15EZ2fjyhTE44y2A">Escreva aqui ➜</a></p>
+        </section>
+    </div>
+</body>
+<script src="{% static '/js/script.js' %}"></script>
+
+</html>

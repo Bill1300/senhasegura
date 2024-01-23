@@ -1,0 +1,346 @@
+/* Fonts */
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('/static/fonts/Roboto/Roboto-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('/static/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'RussoOne';
+    src: url('/static/fonts/RussoOne/RussoOne-Regular.ttf') format('truetype');
+}
+
+/* Reset and General Styles */
+body {
+    font-family: Roboto-Medium, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Selection Disable */
+.naoSelecionavel {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/* Navigation Bar */
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.topnav a {
+    float: left;
+    cursor: pointer;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: .3s;
+}
+
+.topnav a:hover {
+    color: #fff;
+    text-shadow: 0 0 1px #f2f2f2;
+}
+
+.topnav a.active {
+    background-color: #0056b3;
+    color: white;
+    border-radius: 0 10px 10px 0;
+}
+
+/* Container Styles */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1, h3 {
+    font-family: 'RussoOne';
+    text-align: center;
+}
+
+h1 {
+    color: #003064;
+}
+
+h3 {
+    font-size: 22px;
+    color: #333;
+}
+
+/* Title Subsection Styles */
+.titulo-ss {
+    display: flex;
+    align-items: center;
+}
+
+.titulo-ss img {
+    margin-right: 10px;
+}
+
+/* Form and Input Styles */
+.password-form,
+.password-list {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input {
+    font-size: 16px;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: solid 1px #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+button {
+    width: 94px;
+    height: 34px;
+    text-align: center;
+    line-height: 20px;
+    padding: 0;
+    font-weight: 600;
+    font-size: medium;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.asterisco-obg {
+    color: #ff0000;
+    font-weight: 500;
+}
+
+/* Submit Button Styles */
+.acaoSubmit {
+    color: #fff;
+    background-color: #0056b3;
+    border: solid 2px #0056b3;
+}
+
+.acaoSubmit:hover {
+    background-color: #003064;
+    border: solid 2px #003064;
+}
+
+/* Generate Button Styles */
+.acaoGerar {
+    width: 120px;
+    color: #0056b3;
+    background-color: #fff;
+    border: solid 2px #0056b3;
+}
+
+.acaoGerar:hover {
+    color: #003064;
+    border: solid 2px #003064;
+}
+
+/* Search Input Styles */
+.search-input {
+    margin: 0;
+}
+
+/* Password List Styles */
+.password-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.password-item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Password Details Styles */
+.details-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+}
+
+.password-details {
+    display: flex;
+    align-items: center;
+    color: #555;
+    margin: 2px 0;
+}
+
+.password-details img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.password-details span {
+    line-height: 1.5;
+}
+
+/* Password Actions Styles */
+.password-actions {
+    display: flex;
+}
+
+.password-actions a {
+    width: 90px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    padding: 0;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    color: #0056b3;
+    border: solid 2px #0056b3;
+    font-weight: 600;
+    border-radius: 3px;
+    margin-right: 5px;
+    transition: 0.3s;
+}
+
+.password-actions a:hover {
+    color: #003064;
+    border: solid 2px #003064;
+}
+
+.password-actions .delete-link {
+    color: #ff0000;
+    border: solid 2px #ff0000;
+}
+
+.password-actions .delete-link:hover {
+    color: #b30000;
+    border: solid 2px #b30000;
+}
+
+.password-actions .copy-link {
+    color: #fff;
+    background-color: #0056b3;
+    font-weight: 600;
+    border-radius: 3px;
+}
+
+.password-actions .copy-link:hover {
+    color: #fff;
+    background-color: #003064;
+}
+
+/* Update Section Styles */
+.update-section {
+    margin-bottom: 20px;
+}
+
+/* Password Visibility Styles */
+.senha-mostrar.visible {
+    visibility: visible;
+}
+
+.senha-mostrar:not(.visible) {
+    display: none;
+}
+
+/* Confirmation Dialog Styles */
+.deletar-confirmar {
+    position: fixed;
+    background-color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#botao-deletar-confirmar {
+    color: #fff;
+    background-color: #ff0000;
+    border: solid 2px #ff0000;
+}
+
+#botao-deletar-confirmar:hover {
+    background-color: #b30000;
+    border: solid 2px #b30000;
+}
+
+/* Documentation Styles */
+.subtitulo-docs {
+    text-align: left;
+}
+
+.texto-docs {
+    font-family: Roboto-Regular, sans-serif;
+    font-size: large;
+    text-align: justify;
+    text-indent: 1em;
+}
+
+.texto-lista-docs {
+    font-family: Roboto-Regular;
+}
+
+.saida-docs {
+    padding: 5px 10px;
+    background-color: #7fabd8;
+    color: #0056b3;
+    border-radius: 150px;
+}
+
+/* Responsive Table Styles */
+.responsive-table {
+    margin: 0;
+
+    li {
+        border-radius: 3px;
+        padding: 20px 25px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        margin-left: -5%;
+
+        .table-row {
+            background-color: #ffffff;
+            box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .col-1 {
+            flex-basis: 50%;
+            text-align: justify;
+        }
+
+        .col-2 {
+            flex-basis: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}

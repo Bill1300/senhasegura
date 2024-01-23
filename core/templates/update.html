@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css?{%  now 'U' %}">
+    <link rel="icon" type="image/x-icon" href="/static/images/icons-senhasegura/ico-ss-escuro.png">
+    <title>SenhaSegura - Editar '{{senhas.titulo}}'</title>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" onclick="toHomePage();">Minhas Senhas</a>
+        <a href="{% url 'docs' %}" target="_blank">Documentação</a>
+    </div>
+    <div class="container">
+        <div class="titulo-ss"><img src="/static/images/icons-senhasegura/ico-ss-escuro.png" draggable="false" width="60px" height="auto">
+            <h1 class="naoSelecionavel">SenhaSegura</h1>
+        </div>
+        <section class="password-form">
+            <h3>{{ senhas.titulo }}</h3>
+            <form action="{% url 'update' senhas.id %}" method="post" class="update-form">
+                {% csrf_token %}
+                <label for="titulo">Título<span class="asterisco-obg">*</span></label>
+                <input type="text" name="titulo" id="titulo" value="{{ senhas.titulo }}" required>
+
+                <label for="descricao">Descrição</label>
+                <input type="text" name="descricao" id="descricao" value="{{ senhas.descricao }}">
+
+                <label for="usuario">Usuário</label>
+                <input type="text" name="usuario" id="usuario" value="{{ senhas.usuario }}">
+
+                <label for="senha">Senha<span class="asterisco-obg">*</span></label>
+                <input type="password" name="senha" id="senha" value="{{ senhas.senha }}" required>
+
+                <button class="acaoSubmit" type="submit">Salvar</button>
+                <button class="acaoGerar" type="button" id="gerarSenhaBotao">Gerar Senha</button>
+            </form>
+        </section>
+    </div>
+</body>
+<script src="{% static '/js/script.js' %}"></script>
+</html>
